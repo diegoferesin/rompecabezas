@@ -64,9 +64,13 @@ li::before {
   to   { opacity: 1; }
 }
 
-#piezas {
-  width: 100%;
+.piezas {
+  width: 33%;
   float: left;
+}
+
+#juego {
+  width: 100%;
 }
 
 img {
