@@ -1,5 +1,10 @@
 // Arreglo que contiene las intrucciones del juego 
-var instrucciones = [];
+var instrucciones = [
+  "Esta es la primer instrucción",
+  "Esta es la segunda instrucción",
+  "Esta es la tercer instrucción",
+  "Esta es la cuarta instrucción"
+];
 // Arreglo para ir guardando los movimientos que se vayan realizando
 var movimientos = [];
 
@@ -21,6 +26,10 @@ Cada elemento de este arreglo deberá ser mostrado en la lista con id 'lista-ins
 Para eso deberás usar la función ya implementada mostrarInstruccionEnLista().
 Podés ver su implementación en la ultima parte de este codigo. */
 function mostrarInstrucciones(instrucciones) {
+  for (i = 0; i < instrucciones.length; i++) {
+    var posicion = instrucciones[i];
+    mostrarInstruccionEnLista(posicion);
+  }
     //COMPLETAR
 }
 
