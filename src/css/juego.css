@@ -15,32 +15,32 @@ li {
   animation: fadein 5s;
 }
 li::before {
-  content: "• ";
-  color: #EC6778;
+  content: '• ';
+  color: #ec6778;
 }
 
 .col-40 h1 {
   font-size: 20px;
-  color: #E84A5F;
+  color: #e84a5f;
 }
 
-.col-40, .col-60 {
+.col-40,
+.col-60 {
   display: table-cell;
   margin: 0;
   vertical-align: top;
 }
 .col-40 {
-  background: #FFF;
+  background: #fff;
   padding: 30px;
   color: #000;
 }
 
 .col-60 {
-  background: #E84A5F;
-
+  background: #e84a5f;
 }
 
-#flecha{
+#flecha {
   font-size: 60px;
 }
 
@@ -60,8 +60,12 @@ li::before {
 }
 
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .piezas {
@@ -75,4 +79,8 @@ li::before {
 
 img {
   width: 100%;
+}
+
+.piezas {
+  display: block;
 }
