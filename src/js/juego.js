@@ -32,8 +32,8 @@ function mostrarInstrucciones(instrucciones) {
 /* COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
 y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
 
-function ultimaDireccion(data) {
-  movimientos.push(data);
+function agregaLaUltimaDireccion(codigosDireccion) {
+  movimientos.push(codigosDireccion);
   actualizarUltimoMovimiento();
 }
 

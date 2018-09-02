@@ -69,8 +69,9 @@ li::before {
 }
 
 .piezas {
-  width: 33%;
+  width: 33.33%;
   float: left;
+  display: block;
 }
 
 #juego {
@@ -79,8 +80,4 @@ li::before {
 
 img {
   width: 100%;
-}
-
-.piezas {
-  display: block;
 }
