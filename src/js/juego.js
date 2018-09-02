@@ -3,7 +3,8 @@ var instrucciones = [
   `Esta es la primer instrucción`,
   `Esta es la segunda instrucción`,
   `Esta es la tercer instrucción`,
-  `Esta es la cuarta instrucción`
+  `Esta es la cuarta instrucción`,
+  `Esta es la quinta instrucción`
 ];
 // Arreglo para ir guardando los movimientos que se vayan realizando
 var movimientos = [];
@@ -30,6 +31,11 @@ function mostrarInstrucciones(instrucciones) {
 
 /* COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
 y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
+
+function ultimaDireccion(data) {
+  movimientos.push(data);
+  actualizarUltimoMovimiento();
+}
 
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora.
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
