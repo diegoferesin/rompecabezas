@@ -11,7 +11,7 @@ var movimientos = [];
 
 // Representación de la grilla. Cada número representa a una pieza.
 // El 9 es la posición vacía
-var grilla = [[1, 5, 3], [4, 2, 6], [7, 8, 9]];
+var grilla = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
 /* Estas dos variables son para guardar la posición de la pieza vacía.
 Esta posición comienza siendo la [2, 2]*/
@@ -39,14 +39,16 @@ function agregaLaUltimaDireccion(codigosDireccion) {
 
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora.
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
-function chequearSiGano() {
+function chequearSiGano(grilla) {
+  var indiceActual;
+  var ordenado = true;
   for (var i = 0; i < grilla.length; i++) {
     for (var j = 0; j < grilla[i].length; j++) {
       var actual = grilla[i][j];
-      if (actual < siguiente) {
-        true;
+      if (actual < grilla[i][j]) {
+        console.log('Entró al true');
       } else {
-        false;
+        console.log('Entró al false');
       }
     }
   }
@@ -264,8 +266,8 @@ function capturarTeclas() {
   };
 }
 
-/* Se inicia el rompecabezas mezclando las piezas 60 veces 
-y ejecutando la función para que se capturen las teclas que 
+/* Se inicia el rompecabezas mezclando las piezas 60 veces
+y ejecutando la función para que se capturen las teclas que
 presiona el usuario */
 function iniciar() {
   mostrarInstrucciones(instrucciones);
