@@ -40,14 +40,16 @@ function agregaLaUltimaDireccion(codigosDireccion) {
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora.
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
 function chequearSiGano(grilla) {
-  var indiceActual;
+  var valorActual = 0;
   var ordenado = true;
   for (var i = 0; i < grilla.length; i++) {
     for (var j = 0; j < grilla[i].length; j++) {
-      var actual = grilla[i][j];
-      if (actual < grilla[i][j]) {
+      var posicionActual = grilla[i][j];
+      if (posicionActual > grilla[i][j]) {
+        var valorActual = valorActual + 1;
         console.log('Entró al true');
       } else {
+        ordenado = false;
         console.log('Entró al false');
       }
     }
