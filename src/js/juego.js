@@ -44,21 +44,23 @@ function chequearSiGano(grilla) {
   var ordenado = true;
   for (var i = 0; i < grilla.length; i++) {
     for (var j = 0; j < grilla[i].length; j++) {
-      var posicionActual = grilla[i][j];
-      if (posicionActual > grilla[i][j]) {
-        var valorActual = valorActual + 1;
-        console.log('Entró al true');
-      } else {
+      if (valorActual > grilla[i][j]) {
         ordenado = false;
-        console.log('Entró al false');
+        console.log('Se desordenó');
+      } else {
+        console.log('Sigue ordenador');
+        valorActual++;
       }
     }
   }
+  return ordenado;
 }
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
-function mostrarCartelGanador() {
-  if (chequearSiGano()) {
+var chequeoSiGano = chequearSiGano();
+function mostrarCartelGanador(chequearSiGano) {
+  var gano = chequearSiGano();
+  if (gano) {
     alert('Ganaste');
   }
 }
