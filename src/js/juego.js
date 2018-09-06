@@ -39,27 +39,27 @@ function agregaLaUltimaDireccion(codigosDireccion) {
 
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora.
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
-function chequearSiGano(grilla) {
+function chequearSiGano(dato) {
   var valorActual = 0;
   var ordenado = true;
-  for (var i = 0; i < grilla.length; i++) {
-    for (var j = 0; j < grilla[i].length; j++) {
-      if (valorActual > grilla[i][j]) {
-        ordenado = false;
-        console.log('Se desordenó');
-      } else {
+  for (var i = 0; i < dato.length; i++) {
+    for (var j = 0; j < dato[i].length; j++) {
+      if (valorActual < dato[i][j]) {
         console.log('Sigue ordenador');
         valorActual++;
+      } else {
+        ordenado = false;
+        console.log('Se desordenó');
       }
     }
   }
   return ordenado;
 }
 
-// Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
+/* Implementar alguna forma de mostrar un cartel que avise que ganaste el juego */
 var chequeoSiGano = chequearSiGano();
-function mostrarCartelGanador(chequearSiGano) {
-  var gano = chequearSiGano();
+function mostrarCartelGanador(dato) {
+  var gano = dato;
   if (gano) {
     alert('Ganaste');
   }
