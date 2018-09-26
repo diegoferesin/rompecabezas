@@ -1,14 +1,16 @@
 // Arreglo que contiene las intrucciones del juego
 var instrucciones = [
-  `Esta es la primer instrucción`,
-  `Esta es la segunda instrucción`,
-  `Esta es la tercer instrucción`,
-  `Esta es la cuarta instrucción`,
-  `Esta es la quinta instrucción`
+  'Mueve la pieza vacía con la teclas de dirección',
+  'No hay límite de tiempo, solo el que dispongas vos',
+  'Pensá en los movimientos, no en el tiempo',
+  'Pikachu no te la va a complicar'
 ];
 // Arreglo para ir guardando los movimientos que se vayan realizando
 var movimientos = [];
 
+function mostrarUltimoMovimiento() {
+  console.log(movimientos.length);
+}
 // Representación de la grilla. Cada número representa a una pieza.
 // El 9 es la posición vacía
 var grilla = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
@@ -23,7 +25,7 @@ Cada elemento de este arreglo deberá ser mostrado en la lista con id 'lista-ins
 Para eso deberás usar la función ya implementada mostrarInstruccionEnLista().
 Podés ver su implementación en la ultima parte de este codigo. */
 function mostrarInstrucciones(instrucciones) {
-  for (i = 0; i < instrucciones.length; i++) {
+  for (var i = 0; i < instrucciones.length; i++) {
     var posicion = instrucciones[i];
     mostrarInstruccionEnLista(posicion, 'lista-instrucciones');
   }
@@ -39,36 +41,39 @@ function agregaLaUltimaDireccion(codigosDireccion) {
 
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora.
 Existen diferentes formas de hacer este chequeo a partir de la grilla. */
-function chequearSiGano(dato) {
+
+function chequearSiGano() {
   var valorActual = 0;
   var ordenado = true;
-  for (var i = 0; i < dato.length; i++) {
-    for (var j = 0; j < dato[i].length; j++) {
-      if (valorActual < dato[i][j]) {
-        console.log('Sigue ordenador');
+  for (var i = 0; i < grilla.length; i++) {
+    for (var j = 0; j < grilla[i].length; j++) {
+      if (valorActual < grilla[i][j]) {
+        // console.log('Está ordenado');
         valorActual++;
       } else {
         ordenado = false;
-        console.log('Se desordenó');
+        // console.log('Se desordenó');
       }
     }
   }
   return ordenado;
 }
 
-/* Implementar alguna forma de mostrar un cartel que avise que ganaste el juego */
-var chequeoSiGano = chequearSiGano();
-function mostrarCartelGanador(dato) {
-  var gano = dato;
+// Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
+
+function mostrarCartelGanador() {
+  var gano = chequearSiGano();
   if (gano) {
     alert('Ganaste');
+    mezclarPiezas(30);
+    capturarTeclas();
   }
 }
 
 /* Función que intercambia dos posiciones en la grilla.
-Pensar como intercambiar dos posiciones en un arreglo de arreglos. 
+Pensar como intercambiar dos posiciones en un arreglo de arreglos.
 Para que tengas en cuenta:
-Si queremos intercambiar las posiciones [1,2] con la [0, 0], si hacemos: 
+Si queremos intercambiar las posiciones [1,2] con la [0, 0], si hacemos:
 arreglo[1][2] = arreglo[0][0];
 arreglo[0][0] = arreglo[1][2];
 
@@ -81,17 +86,25 @@ function intercambiarPosicionesGrilla(
   filaPos2,
   columnaPos2
 ) {
-  //COMPLETAR
+  var temporal = grilla[filaPos1][columnaPos1];
+  var temporal2 = grilla[filaPos2][columnaPos2];
+  grilla[filaPos1][columnaPos1] = temporal2;
+  grilla[filaPos2][columnaPos2] = temporal;
 }
 
 // Actualiza la posición de la pieza vacía
 function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
-  //COMPLETAR
+  filaVacia = nuevaFila;
+  columnaVacia = nuevaColumna;
 }
 
 // Para chequear si la posicón está dentro de la grilla.
 function posicionValida(fila, columna) {
-  //COMPLETAR
+  if (fila >= 0 && fila < 3 && columna >= 0 && columna < 3) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* Movimiento de fichas, en este caso la que se mueve es la blanca intercambiando su posición con otro elemento.
@@ -99,27 +112,29 @@ Las direcciones están dadas por números que representa: arriba (38), abajo (40
 function moverEnDireccion(direccion) {
   var nuevaFilaPiezaVacia;
   var nuevaColumnaPiezaVacia;
-
+  //debugger;
   // Mueve pieza hacia la abajo, reemplazandola con la blanca
   if (direccion === codigosDireccion.ABAJO) {
-    nuevaFilaPiezaVacia = filaVacia - 1;
+    nuevaFilaPiezaVacia = filaVacia + 1;
     nuevaColumnaPiezaVacia = columnaVacia;
   }
 
   // Mueve pieza hacia arriba, reemplazandola con la blanca
   else if (direccion === codigosDireccion.ARRIBA) {
-    nuevaFilaPiezaVacia = filaVacia + 1;
+    nuevaFilaPiezaVacia = filaVacia - 1;
     nuevaColumnaPiezaVacia = columnaVacia;
   }
 
   // Mueve pieza hacia la derecha, reemplazandola con la blanca
   else if (direccion === codigosDireccion.DERECHA) {
-    //COMPLETAR
+    nuevaFilaPiezaVacia = filaVacia;
+    nuevaColumnaPiezaVacia = columnaVacia + 1;
   }
 
   // Mueve pieza hacia la izquierda, reemplazandola con la blanca
   else if (direccion === codigosDireccion.IZQUIERDA) {
-    // COMPLETAR
+    nuevaFilaPiezaVacia = filaVacia;
+    nuevaColumnaPiezaVacia = columnaVacia - 1;
   }
 
   /* A continuación se chequea si la nueva posición es válida, si lo es, se intercambia. 
@@ -136,6 +151,7 @@ function moverEnDireccion(direccion) {
     actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
 
     //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
+    agregaLaUltimaDireccion();
   }
 }
 
@@ -190,10 +206,10 @@ function intercambiarPosicionesDOM(idPieza1, idPieza2) {
   padre.replaceChild(clonElemento2, elementoPieza1);
 }
 
-/* Actualiza la representación visual del último movimiento 
+/* Actualiza la representación visual del último movimiento
 en la pantalla, representado con una flecha. */
 function actualizarUltimoMovimiento(direccion) {
-  ultimoMov = document.getElementById('flecha');
+  var ultimoMov = document.getElementById('flecha');
   switch (direccion) {
     case codigosDireccion.ARRIBA:
       ultimoMov.textContent = '↑';
@@ -211,7 +227,7 @@ function actualizarUltimoMovimiento(direccion) {
 }
 
 /* Esta función permite agregar una instrucción a la lista
-con idLista. Se crea un elemento li dinámicamente con el texto 
+con idLista. Se crea un elemento li dinámicamente con el texto
 pasado con el parámetro "instrucción". */
 function mostrarInstruccionEnLista(instruccion, idLista) {
   var ul = document.getElementById(idLista);

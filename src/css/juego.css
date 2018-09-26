@@ -56,7 +56,7 @@ li::before {
 #juego div {
   text-align: center;
   animation: fadein 2s;
-  background-color: red;
+  background-color: green;
 }
 
 @keyframes fadein {
@@ -69,15 +69,16 @@ li::before {
 }
 
 .piezas {
-  width: 33.33%;
+  width: 200px;
+  height: 200px;
   float: left;
   display: block;
 }
 
-#juego {
+img {
   width: 100%;
 }
 
-img {
-  width: 100%;
+#pieza9 {
+  opacity: 0.1;
 }
