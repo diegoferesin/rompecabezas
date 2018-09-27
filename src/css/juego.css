@@ -7,8 +7,9 @@ body {
   background-image: url(../images/adventure.jpg);
 }
 ul {
-  padding-left: 0;
+  padding-left: 7px;
   list-style: none;
+  margin-top: 7px;
 }
 li {
   padding: 5px 0;
@@ -56,7 +57,6 @@ li::before {
 #juego div {
   text-align: center;
   animation: fadein 2s;
-  background-color: green;
 }
 
 @keyframes fadein {
@@ -81,4 +81,14 @@ img {
 
 #pieza9 {
   opacity: 0.1;
+}
+
+.bordes {
+  border: 2px solid #e84a5f;
+  border-radius: 2px;
+  box-shadow: 5px 5px 0px 0px rgba(224, 230, 43, 1);
+}
+
+#titulo {
+  text-align: center;
 }

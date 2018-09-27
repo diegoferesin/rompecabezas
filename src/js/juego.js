@@ -151,7 +151,7 @@ function moverEnDireccion(direccion) {
     actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
 
     //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
-    agregaLaUltimaDireccion();
+    agregaLaUltimaDireccion(direccion);
   }
 }
 
