@@ -9,7 +9,9 @@ var instrucciones = [
 var movimientos = [];
 
 function mostrarUltimoMovimiento() {
-  console.log(movimientos.length);
+  for (var i = movimientos.length; i < movimientos.length - 5; i++) {
+    console.log(i);
+  }
 }
 // Representación de la grilla. Cada número representa a una pieza.
 // El 9 es la posición vacía
