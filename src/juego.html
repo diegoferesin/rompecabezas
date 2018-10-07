@@ -8,31 +8,36 @@
 </head>
 
 <body>
-  <div class="col-40">
-    <div id="titulo" class="bordes">
-      <h1>Rompekachu</h1>
+  <div class="col-40 bordes">
+    <div class="bordes unMargin">
+      <div id="titulo" class="">
+        <h1>Rompekachu</h1>
+      </div>
+      <div id="instrucciones" class="">
+        <ul id="lista-instrucciones">
+        </ul>
+      </div>
     </div>
-    <div id="instrucciones" class="bordes">
-      <ul id="lista-instrucciones">
-      </ul>
-    </div>
-    <div id="objetivo">
-      <div class="texto-centrado">
-        <h4 class="rojito">Objetivo Final</h4>
-        <div class="bordes">
-          <img src="images/final.png" alt="Objetivo Final">
+    <div class="bordes unMargin">
+      <div id="objetivo">
+        <div class="texto-centrado">
+          <h4 class="rojito">Objetivo Final</h4>
+          <div>
+            <img src="images/final.png" alt="Objetivo Final">
+          </div>
         </div>
       </div>
     </div>
-    <h4 class="rojito">Último Movimiento</h4>
-    <div id="ultimo-mov" class="bordes">
-      <div id="flecha" class="texto-centrado">
+    <div class="bordes">
+      <h4 class="rojito">Último Movimiento</h4>
+      <div id="ultimo-mov">
+        <div id="flecha" class="texto-centrado">
 
+        </div>
       </div>
     </div>
-
   </div>
-  <div class="col-60">
+  <div class="col-60 bordes">
     <div id="juego">
       <div class="piezas" id="pieza1"><img src="images/1.jpg" alt="Pieza 1"></div>
       <div class="piezas" id="pieza2"><img src="images/2.jpg" alt="Pieza 2"></div>
@@ -45,8 +50,9 @@
       <div class="piezas" id="pieza9"></div>
     </div>
   </div>
-  <div id="footer" class="bordes">
 
+  <div id="footer">
+    <h4 class="rojito bordes texto-centrado">Desarrollado por Acámica y uno de sus alumnos 😄</h4>
   </div>
   <script src="js/juego.js"></script>
 </body>

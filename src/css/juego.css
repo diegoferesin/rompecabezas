@@ -2,7 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   width: 940px;
-  margin: 5% auto;
+  margin: 1% auto;
   min-height: 100%;
   background-image: url(../images/adventure.jpg);
 }
@@ -23,6 +23,8 @@ li::before {
 .col-40 h1 {
   font-size: 20px;
   color: #e84a5f;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .col-40,
@@ -38,7 +40,9 @@ li::before {
 }
 
 .col-60 {
-  background: #e84a5f;
+  background: #ffff43;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #flecha {
@@ -97,4 +101,17 @@ img {
   font-size: 17px;
   color: #e84a5f;
   text-align: center;
+}
+
+.blanquito {
+  background-color: #ffffff;
+}
+
+h4 {
+  margin-top: 3%;
+  margin-bottom: 0%;
+}
+
+.unMargin {
+  margin-bottom: 2%;
 }

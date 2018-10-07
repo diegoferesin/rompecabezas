@@ -1,17 +1,16 @@
 // Arreglo que contiene las intrucciones del juego
 var instrucciones = [
   'Mueve la pieza vacía con la teclas de dirección',
-  'No hay límite de tiempo, solo el que dispongas vos',
   'Pikachu no te la va a complicar'
 ];
 // Arreglo para ir guardando los movimientos que se vayan realizando
 var movimientos = [];
-
-function mostrarUltimoMovimiento() {
-  for (var i = movimientos.length; i < movimientos.length - 5; i++) {
-    console.log(i);
-  }
-}
+// 'No hay límite de tiempo, solo el que dispongas vos',
+// function mostrarUltimoMovimiento() {
+//   for (var i = movimientos.length; i < movimientos.length - 5; i++) {
+//     console.log(i);
+//   }
+// }
 // Representación de la grilla. Cada número representa a una pieza.
 // El 9 es la posición vacía
 var grilla = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
