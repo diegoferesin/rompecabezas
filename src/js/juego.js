@@ -2,7 +2,6 @@
 var instrucciones = [
   'Mueve la pieza vacía con la teclas de dirección',
   'No hay límite de tiempo, solo el que dispongas vos',
-  'Pensá en los movimientos, no en el tiempo',
   'Pikachu no te la va a complicar'
 ];
 // Arreglo para ir guardando los movimientos que se vayan realizando
@@ -38,7 +37,7 @@ y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
 
 function agregaLaUltimaDireccion(codigosDireccion) {
   movimientos.push(codigosDireccion);
-  actualizarUltimoMovimiento();
+  actualizarUltimoMovimiento(codigosDireccion);
 }
 
 /* Esta función va a chequear si el Rompecabezas esta en la posicion ganadora.
